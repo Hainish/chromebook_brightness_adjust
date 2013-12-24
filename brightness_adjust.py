@@ -17,9 +17,10 @@ def get_current_brightness():
 
 def set_current_brightness(brightness):
     if brightness > MAX_BRIGHTNESS or brightness < 0:
-        return false
+        return False
     with open(BRIGHTNESS_FILE, 'w') as f:
         f.write(str(brightness))
+    return True
 
 if __name__ == "__main__":
     if not valid_usage():
